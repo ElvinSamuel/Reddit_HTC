@@ -1,0 +1,244 @@
+/* ====================== Header ====================== */
+/* --------- Removing The Header Subreddit Name -------*/
+#header .pagename a {
+  visibility: hidden;
+}
+
+#header .pagename a:after {
+  visibility: visible;
+  content: "";
+}
+
+/* ------------- Removing The Snoo Entirely ----------- */
+#header-img.default-header { background-image: transparent; }
+.hover.pagename.redditname a { display: table-cell; color: transparent; height: 0; width: 0; }
+/* ---------------------------------------------------- */
+
+#header {
+     /* Let's Get It All Nice And Pretty */
+     background: #0863c1;
+}
+
+/* ----Let's Move The Header Around --- */
+#header-bottom-right {
+    background: #6b3e26;
+}
+
+#header-bottom-right a {
+    color: #c2f2d0;
+}
+/* ====================== Body ====================== */
+     /* Turns The Mouse Into A Spoon */
+div {
+     cursor: url(%%spoon%%), default !important;
+}
+
+/* ------Change The Font For The Entire Subreddit------ */
+* {
+    font-family: "Verdana", cursive;
+}
+
+
+body {
+     /* Background Modifiers */
+     background: #0863c1 url(%%logo%%) fixed center no-repeat;
+     background-attachment:fixed !important;
+
+     /* Centering The Page*/
+     width: 80%; 
+     margin: 0 auto;
+/* Centering wasn't working because the entire page was the width of the device*/
+          /* It's therefore ALREADY centered */
+          /* Took Me Longer To Figure Out Than I Care To Admit*/
+}
+
+body a {
+     cursor: url(%%spoon%%);
+}
+
+.thing {
+     background: #fdf5c9;
+}
+/* ======================The Side Bar ====================== */
+div.side {
+     /* Messing With The Sidebar */
+     margin-top: 15px;
+     margin-right: 1px;
+     padding: 0 5px 5px 5px;
+     background: none;
+}
+
+div.titlebox .subscribers span.number:after { 
+     content:"   Halo Toppers "; 
+}
+
+div.titlebox span.word { 
+     display: none; /* Get's rid of the "readers" and "here now" parts in this section */
+ }
+
+div.titlebox span.number:after { 
+     content: " Halos Here Now " 
+}
+
+.titlebox h1 a {
+     display: none;
+}
+
+     /* Taking The End Arrow ("Nub") Off Of The "Submit a new link/text post" buttons*/
+.nub {
+     display: none;
+}
+
+.sidebox.submit.submit-link a:hover {
+     color: #fdf5c9;
+}
+
+.sidebox.submit.submit-text a:hover {
+     color: #fdf5c9;
+}
+
+/* 
+     Thanks /u/novov for the following code to modify the subscribe button
+     I modified the code to fit this Subreddit. 
+     (source: /r/csshelp/comments/3sgpzj/is_there_any_way_to_change_the_subscribe_text_to/)
+*/
+
+/* From what I found, the button can't be changed, but you can remove it to make your own. */
+.subscribe-button .option {
+     font-size: 0;
+     visibility: hidden;
+     padding: 0;
+}
+
+span.subscribe-button .option:before {
+     visibility: visible!important;
+     /* Creating The Box Border */
+     border: 1px solid #444;
+     border-radius: 3px;
+     display: inline-block;
+     font-size: 10px !important;
+     text-align: inline;
+     width: 100px;
+}
+
+span.subscribe-button .add:before {
+     content:'Get*Your*Halo';
+     background: #6b3e26;
+     color: #ffc5d9
+}
+
+span.subscribe-button .remove:before {
+     content: "Get*Your*Halo"; 
+/* Note: figure out why multi words get moved down a line */
+     display: inline;
+     color: #ffc5d9; 
+/* If you switch it back to the ice cream pink: #c2f2d0 */
+     padding: 2%; 
+     background: #6b3e26;
+}
+
+/* span.subscribe-button .remove:before a:hover {
+     content: "Get*Your*Halo";
+     display: inline;
+     color: #c2f2d0;
+     padding: 1%; 
+     background: #FFF;
+} */
+
+div.side {
+     background-color: #c2f2d0;
+}
+
+div.side .md {
+     background-color: #6b3e26;
+}
+
+/* Thanks To r/CSSHelp/About/Stylesheet for this code */
+@media screen and (max-width: 1040px) {
+    body {
+        overflow-x: hidden;
+    }
+    body > .content {
+        margin-right: 0;
+    }
+    body .side {
+        opacity: .5;
+        position: absolute;
+        right: -200px;
+        -webkit-transition: all 300ms;
+        transition: all 300ms;
+    }
+    .side:hover {
+        opacity: 1;
+        position: absolute;
+        right: 0;
+    }
+    .linklisting:first-of-type {
+         border-right: 0;
+    }
+}
+@media (-webkit-min-device-pixel-ratio: 1.25) and (max-width: 1040px), (min-resolution: 144dpi) and (max-width: 1040px) {
+    body .side {
+        position: fixed;
+    }
+}
+@media (min--moz-device-pixel-ratio: 1.25) {
+    body .side {
+        opacity: 1;
+        position: relative;
+        right: 0;
+    }
+    .side .md h4 {
+        display: none;
+    }
+}
+
+/* ======================Content====================== */
+.thumbnail.self {
+     /*
+     background-image: url(%%logo%%);
+     height: 30px;
+     width: 30px;
+     */
+}
+
+/* ======================Arrows====================== */
+.arrow {
+     background: url(%%tinylogo%%);
+}
+
+.arrow.upmod { 
+     background-position: 0 0;
+}
+
+#siteTable .arrow.down, .sidecontentbox .midcol div.score, .sidecontentbox .arrow.down {
+     /* Making the Sub Upvote-Friendly */
+     display: none!important;
+}
+
+/* ======================Footer====================== */
+.footer {
+     background-color: #c2f2d0;
+}
+
+.footer a {
+     color: #6b3e26;
+}
+
+.footer div.col a {
+     display: block;
+     -moz-border-radius: 3px;
+     -webkit-border-radius: 3px;
+     margin: 3px 3px;
+     padding: 2px 4px 2px 7px;
+     color: #000;
+     background: #6b3e26;
+     text-align: center;
+     color: #ffc5d9;
+}
+
+.footer div.col a:hover {
+     background: #ffc5d9;
+     color: #6b3e26;
+     text-decoration: none
+}
